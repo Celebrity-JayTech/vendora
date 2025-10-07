@@ -1,3 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* globals.css (optional but helps) */
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+}
+
 @import "tailwindcss";
 
 :root {
@@ -13,15 +23,221 @@
   --font-chivo: var(--font-chivo);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
 }
-
+.dark .cn {
+  --foreground: #ededed;
+}
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.auth-scope .cl-rootBox {
+  border-radius: 30px !important;
+}
+
+.auth-scope .cl-rootBox .cl-formButtonPrimary {
+  font-size: 14px;
+  text-transform: none;
+  background-color: #3a86ff !important; /* ensure override */
+  color: #ffffff;
+  border-radius: 10px;
+  padding: 10px 14px;
+  border: none;
+}
+.auth-scope .cl-rootBox .cl-formButtonPrimary:hover {
+  filter: brightness(0.95);
+}
+.auth-scope .cl-rootBox .cl-formButtonPrimary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Header title / subtitle */
+.auth-scope .cl-rootBox .cl-headerTitle {
+  font-size: 25px;
+  font-weight: 800;
+}
+.auth-scope .cl-rootBox .cl-headerSubtitle,         /* ✅ correct spelling */
+.auth-scope .cl-rootBox .cl-headerSubtitleText {
+  /* sometimes used internally */
+  font-size: 13px; /* ✅ add px */
+}
+
+/* Divider "or continue with" text */
+.auth-scope .cl-rootBox .cl-dividerText {
+  font-size: 15px; /* ✅ add px */
+}
+
+/* Inputs */
+.auth-scope .cl-rootBox .cl-formFieldInput,
+.auth-scope .cl-rootBox input[type="text"],
+.auth-scope .cl-rootBox input[type="email"],
+.auth-scope .cl-rootBox input[type="password"] {
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+.auth-scope .cl-rootBox .cl-formFieldInput:focus {
+  outline: 1px solid #611bbd33;
+}
+
+.auth-scope .cl-rootBox .cl-formFieldHintText {
+  visibility: hidden;
+}
+
+/* Cards / containers */
+.auth-scope .cl-rootBox .cl-card,
+.auth-scope .cl-rootBox .cl-cardBox {
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+/* Social buttons (Google, etc.) */
+.auth-scope .cl-rootBox .cl-socialButtons > button {
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  color: #0f172a;
+}
+
+/* Footer link (e.g., "Don't have an account? Sign up") */
+.auth-scope .cl-rootBox .cl-footerAction {
+  color: #475569;
+  font-size: 25px;
+}
+.auth-scope .cl-rootBox .cl-footerActionText {
+  color: #475569;
+  font-size: 15px;
+}
+.auth-scope .cl-rootBox .cl-footerAction a {
+  color: #3a86ff;
+  text-decoration: none;
+  font-size: 15px;
+}
+.auth-scope .cl-rootBox .cl-footerAction a:hover {
+  text-decoration: underline;
+}
+
+/* System dark fallback if you don't use next-themes (.dark class) */
+@media (prefers-color-scheme: dark) {
+  .auth-scope .cl-rootBox {
+    background: #0b0b0d;
+    color: #e5e7eb;
+  }
+  .auth-scope .cl-rootBox .cl-card,
+  .auth-scope .cl-rootBox .cl-cardBox {
+    background: #111114;
+    border: 1px solid #3a86ff;
+    border-style: dotted;
+  }
+
+  .auth-scope .cl-rootBox .cl-formFieldLabel {
+    font-size: 12px;
+    font-weight: 600;
+    color: #ffffff;
+  }
+
+  /*Header Title*/
+  .auth-scope .cl-rootBox .cl-header .cl-headerTitle,
+  .auth-scope .cl-rootBox .cl-headerTitleText {
+    color: #f8f8ff;
+  }
+
+  /* Subtitle */
+  .auth-scope .cl-rootBox .cl-headerSubtitle,
+  .auth-scope .cl-rootBox .cl-headerSubtitle {
+    color: #a1a1aa;
+  }
+
+  /* OTP Code Field Inputs */
+  .auth-scope .cl-rootBox .cl-otpCodeFieldInput {
+    border: 2px #f8f8ff;
+    box-shadow: #ffffff;
+    background: #f8f8ff;
+    color: #1a1a1f;
+  }
+
+  /* Email Preview Text */
+  .auth-scope .cl-rootBox .cl-identityPreview,
+  .auth-scope .cl-identityPreviewText {
+    color: #f4e1e1;
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  /* Email Preview change email button */
+  .auth-scope .cl-rootBox .cl-identityPreviewEditButton {
+    color: #f4e1e1;
+  }
+
+  /* Form resend code link */
+  .auth-scope .cl-rootBox .cl-formResendCodeLink {
+    color: #ffffff;
+    font-size: 12px;
+  }
+
+  /* Divided Text - Or */
+  .auth-scope .cl-rootBox .cl-dividerText {
+    color: #a1a1aa;
+  }
+
+  /* Divider line */
+  .auth-scope .cl-rootBox .cl-dividerLine {
+    color: #a1a1aa;
+  }
+  .auth-scope .cl-rootBox .cl-formFieldRow .cl-formField .cl-formFieldLabelRowText {
+    color: #a1a1aa;
+  }
+
+  /* Input Field */
+  .auth-scope .cl-rootBox .cl-formFieldInput,
+  .auth-scope .cl-rootBox input[type="text"],
+  .auth-scope .cl-rootBox input[type="email"],
+  .auth-scope .cl-rootBox input[type="password"] {
+    background-color: #1a1a1e;
+    color: #e5e7eb;
+    border: 1px transparent #24282f;
+  }
+
+  .auth-scope .cl-rootBox input::placeholder {
+    color: #ffffff;
+  }
+
+  .auth-scope .cl-rootBox .cl-phoneInputBox {
+    color: #ffffff;
+    margin-right: 2px;
+    border: none !important;
+  }
+  .auth-scope .cl-rootBox .cl-phoneInputBox .cl-selectButton span {
+    color: #ffffff;
+    margin-right: 2px;
+  }
+
+  /* (Scoped) form field action links only */
+  .auth-scope .cl-rootBox .cl-formFieldAction a {
+    color: #ffffff;
+  }
+  .auth-scope .cl-rootBox .cl-formFieldAction a:hover {
+    color: #c08383;
+  }
+
+  .auth-scope .cl-rootBox .cl-formFieldInfoText {
+    font-size: 12px;
+    color: #fbfbfb;
+    margin-top: 4px;
+  }
+
+  /* Footer */
+  .auth-scope .cl-rootBox .cl-footer {
+    background-color: #475569 !important;
+    font-size: 25px;
+  }
+  .auth-scope .cl-rootBox .cl-formButtonPrimary {
+    background: #3a86ff !important;
+    color: #0b0b0d;
+  }
 }

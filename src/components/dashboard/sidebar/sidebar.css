@@ -1,0 +1,32 @@
+.side-bar-container {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 300px;
+  border-right: 1px solid #e5e7eb; /* Tailwind default border color (gray-200) */
+  padding: 1rem; /* equals p-4 */
+}
+
+/* For Button */
+.button {
+  width: 100%;
+  margin-top: 1.25rem; /* mt-5 → 20px */
+  margin-bottom: 1rem; /* mb-4 → 16px */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 2.5rem; /* py-10 → 40px top & bottom */
+  padding-bottom: 2.5rem;
+}
+
+/* For Button DIV */
+.avatar-container {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  gap: 0.5rem; /* gap-2 → 8px */
+}

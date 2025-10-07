@@ -1,0 +1,14 @@
+.sign-up {
+  min-height: 100vh;
+  background-image: url("/vendora-bg.png");
+  background-size: cover; /* makes it fill the page */
+  background-position: center; /* centers it */
+  background-repeat: no-repeat; /* prevents tiling */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-scope {
+  border-radius: 10px !important;
+}

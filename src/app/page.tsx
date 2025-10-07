@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className="font-chivo">
-      <div className="flex gap-x-5 justify-end m-5">
+      <div className="m-5 flex justify-end gap-x-5">
         <UserButton />
         <ThemeToggle />
       </div>

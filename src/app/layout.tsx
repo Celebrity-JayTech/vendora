@@ -30,6 +30,9 @@ export const metadata: Metadata = {
   title: "Vendora",
   description:
     "Vendora is a modern campus-focused SaaS marketplace where students and small businesses can buy, sell, and discover products and services. With built-in wallet payments, bill settlements, flash sales, and personalized dark mode, Vendora makes campus commerce seamless and enjoyable.",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
