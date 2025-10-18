@@ -5,7 +5,7 @@ import "./page.css";
 
 export default function SignInPage() {
   return (
-    <div className="h-screen w-full grid place-content-center sign-up">
+    <div className="sign-up grid h-screen w-full place-content-center">
       <div className="auth-scope">
         <SignIn
           appearance={{

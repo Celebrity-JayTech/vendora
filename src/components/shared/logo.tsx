@@ -3,7 +3,7 @@ import { FC } from "react";
 import Image from "next/image";
 
 //Logo Image
-import LogoImg from "../../../public/assets/icons/favicon.svg";
+import LogoImg from "../../../public/assets/icons/favicon (2).ico";
 
 interface LogoProps {
   width: string;

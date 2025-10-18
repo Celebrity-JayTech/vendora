@@ -1,17 +1,25 @@
 // Nest.js
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Chivo } from "next/font/google";
-
+import { Geist, Geist_Mono, Chivo, Pacifico } from "next/font/google";
+import "./globals.css";
 //Clerk Provider
 import { ClerkProvider } from "@clerk/nextjs";
 //Global css
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
+import { Toaster } from "sonner";
+import ModalProvider from "@/providers/modal-provider";
 
 //Fonts
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+});
+
+const pacifico = Pacifico({
+  variable: "--font-pacifico",
+  subsets: ["latin"],
+  weight: ["400"],
 });
 
 const chivo = Chivo({
@@ -52,7 +60,23 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            {children}
+            <ModalProvider>{children}</ModalProvider>
+            <Toaster />
+
+            <link
+              href="https://fonts.googleapis.com/css2?family=Caprasimo&display=swap"
+              rel="stylesheet"
+            />
+            {/* Luckiest Guy */}
+            <link
+              href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap"
+              rel="stylesheet"
+            />
+            {/* Playwrite España (variable) */}
+            <link
+              href="https://fonts.googleapis.com/css2?family=Playwrite+Espana:wght@400..700&display=swap"
+              rel="stylesheet"
+            />
           </ThemeProvider>
         </body>
       </html>

@@ -7,19 +7,21 @@ import Header from "@/components/dashboard/header/header";
 
 // Sidebard
 import Sidebar from "@/components/dashboard/sidebar/sidebar";
-
 export default async function DashboardLayout({ children }: { children: ReactNode }) {
-  // BLOCK NON ADMIN FROM ACCESSING THE ADMIN DASHBOARD
+  //Redirect If Not Admin
   const user = await currentUser();
   if (!user || user.privateMetadata.role !== "ADMIN") redirect("/");
   return (
     <div className="h-full w-full">
-      {/**Side Bar */}
-      <Sidebar />
-      <div className="ml-[300px] w-full">
+      {/* Sidebar */}
+      <Sidebar isAdmin />
+
+      {/* Main area: no left margin on small screens, reserve space on md+ */}
+      <div className="ml-0 md:ml-[300px]">
         {/* Header */}
-        <Header />
-        <div className="mt-[75px] w-full p-4">{children}</div>
+        <Header user={user} />
+        {/* Keep content below header: mt-16 matches header height */}
+        <div className="mt-16 w-full p-4">{children}</div>
       </div>
     </div>
   );

@@ -1,0 +1,35 @@
+.sun {
+  height: 1.4rem;
+  width: 1.4rem;
+  transform: scale(1) rotate(0deg);
+  transition: all 0.2s ease-in-out; /* Tailwind’s default timing */
+}
+
+/* When dark mode is active */
+.dark .element {
+  transform: scale(0) rotate(-90deg);
+}
+
+.button-container {
+  height: 2.5rem; /* h-10 */
+  width: 2.5rem; /* w-10 */
+  gap: 0.5rem; /* gap-2 */
+  border-radius: 9999px; /* rounded-full */
+}
+
+.moon {
+  position: absolute;
+  height: 1.4rem;
+  width: 1.4rem;
+  transform: rotate(90deg) scale(0);
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+  .mooon {
+    transform: rotate(0deg) scale(1);
+  }
+}

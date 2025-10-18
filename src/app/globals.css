@@ -1,14 +1,9 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-/* globals.css (optional but helps) */
 .dark {
   --background: #0a0a0a;
   --foreground: #ededed;
 }
-
-@import "tailwindcss";
 
 :root {
   --background: #ffffff;

@@ -4,7 +4,7 @@ import { dark } from "@clerk/themes";
 import "./page.css";
 export default function SignUpPage() {
   return (
-    <div className="h-auto w-full grid place-content-center p-5 sign-up">
+    <div className="sign-up grid h-auto w-full place-content-center p-5">
       <div className="auth-scope">
         <SignUp
           appearance={{

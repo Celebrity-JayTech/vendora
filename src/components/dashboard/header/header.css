@@ -1,9 +1,9 @@
-.header {
-  position: fixed;
-  z-index: 20;
-  left: 0;
-  top: 0;
-  right: 0;
-  padding: 5;
-  align-items: center;
+@media screen and (min-width: 600px) {
+  .side-barContainer {
+    visibility: hidden;
+  }
+
+  .container {
+    flex-direction: column;
+  }
 }

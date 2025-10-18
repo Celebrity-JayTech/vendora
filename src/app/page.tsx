@@ -11,7 +11,7 @@ export default function Home() {
         <ThemeToggle />
       </div>
       <h1>Shop at VENDORA</h1>
-      <Button variant={"destructive"}>Start Shopping</Button>
+      <Button variant="outline">Start Shopping</Button>
     </div>
   );
 }
